@@ -1,0 +1,23 @@
+# OptiKes yayın: karıştırılmış uygulama (app/) Windows'ta paketlenir ve bu deponun Releases bölümüne yayınlanır.
+# Müşterilerin programı güncellemeleri buradan indirir. Kaynak kod bu depoda değildir.
+name: Yayın
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  yayin:
+    runs-on: windows-latest
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Paketle ve yayınla
+        run: npx electron-builder --win nsis portable --x64 --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

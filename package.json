@@ -1,0 +1,108 @@
+{
+  "name": "optikes",
+  "version": "1.1.0",
+  "description": "OptiKes kesim optimizasyon programı",
+  "main": "src/main/main.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "OptiKes",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0",
+    "javascript-obfuscator": "^5.9.0",
+    "playwright": "^1.64.1",
+    "resedit-cli": "^3.1.1"
+  },
+  "productName": "OptiKes",
+  "build": {
+    "appId": "com.optikes.app",
+    "productName": "OptiKes",
+    "files": [
+      "app/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "fileAssociations": [
+      {
+        "ext": "oks",
+        "name": "OptiKes Projesi",
+        "description": "OptiKes projesi",
+        "icon": "build/icon.ico"
+      },
+      {
+        "ext": "clo",
+        "name": "OptiKes Projesi (eski)",
+        "description": "OptiKes projesi"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "OptiKes-${version}-${arch}-${target}.${ext}"
+    },
+    "portable": {
+      "artifactName": "OptiKes-${version}-Tasinabilir.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "OptiKes",
+      "uninstallDisplayName": "OptiKes",
+      "deleteAppDataOnUninstall": false,
+      "installerLanguages": [
+        "tr_TR"
+      ],
+      "language": "1055",
+      "artifactName": "OptiKes-Kurulum-${version}.${ext}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    },
+    "extraMetadata": {
+      "main": "app/main/main.js"
+    },
+    "asar": true,
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true,
+      "grantFileProtocolExtraPrivileges": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "avatar3122",
+        "repo": "optikes-guncelleme",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}
