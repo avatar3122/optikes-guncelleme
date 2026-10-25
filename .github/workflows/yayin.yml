@@ -1,5 +1,6 @@
 # OptiKes yayın: karıştırılmış uygulama (app/) Windows'ta paketlenir ve bu deponun Releases bölümüne yayınlanır.
 # Müşterilerin programı güncellemeleri buradan indirir. Kaynak kod bu depoda değildir.
+# Derleme kaydı her çalışmada "loglar" dalına yazılır.
 name: Yayın
 on:
   workflow_dispatch:
@@ -10,14 +11,38 @@ jobs:
     runs-on: windows-latest
     env:
       PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
-      - name: Paketle ve yayınla
-        run: npx electron-builder --win nsis portable --x64 --publish always
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci > kayit.txt 2>&1 || (cat kayit.txt; exit 1)
+      - name: Paketle
+        run: |
+          set -o pipefail
+          npx electron-builder --win nsis portable --x64 --publish never 2>&1 | tee -a kayit.txt
+          ls -la dist | tee -a kayit.txt
+          cat dist/latest.yml | tee -a kayit.txt
+      - name: Yayınla
+        run: |
+          set -o pipefail
+          V=$(node -p "require('./package.json').version")
+          gh release delete "v$V" -y --cleanup-tag 2>&1 | tee -a kayit.txt || true
+          sleep 5
+          gh release create "v$V" dist/OptiKes-Kurulum-$V.exe dist/OptiKes-Kurulum-$V.exe.blockmap dist/latest.yml dist/OptiKes-$V-Tasinabilir.exe \
+            --title "OptiKes $V" --notes-file notlar.md --latest 2>&1 | tee -a kayit.txt
+      - name: Kaydı sakla
+        if: always()
+        run: |
+          git config user.name "optikes-bot"; git config user.email "optikes-bot@users.noreply.github.com"
+          cp kayit.txt /tmp/kayit.txt 2>/dev/null || echo "kayit yok" > /tmp/kayit.txt
+          git checkout --orphan loglar-tmp
+          git rm -rf . -q
+          cp /tmp/kayit.txt kayit.txt
+          git add kayit.txt && git commit -q -m "derleme kaydi ${{ github.run_id }}"
+          git push -f origin HEAD:loglar
