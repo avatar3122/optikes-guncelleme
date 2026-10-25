@@ -1,7 +1,8 @@
-OptiKes 1.1.0
+OptiKes 1.1.1
 
-- Lisans sistemi (deneme: 3 hesaplama, süreli lisanslar)
-- Otomatik güncelleme
-- Kesim planında levhalar yan yana
+- Deneme bitince ve süre dolunca paket fiyatları görünür
+- Lisans satın al düğmesi (Telegram)
+- Hakkında penceresinde güncellemeleri denetle
+- Program her açılışta levhaları ekrana sığdırır
 
 Destek: Telegram @Galileo8101
