@@ -1,8 +1,7 @@
-OptiKes 1.2.0
+OptiKes 1.2.1
 
-- Yeni: CNC Nesting sekmesi. DXF çiziminden şekilli parçalar (hilal, yıldız, delikli parçalar vb.) yüklenir ve levhaya gerçek şekilleriyle yerleştirilir.
-- Parçalar arası boşluk (freze çapı), kenar payı, döndürme açısı ve arama seviyesi ayarlanabilir.
-- Yerleşim planı CNC için DXF olarak, ayrıca PDF ve PNG olarak kaydedilebilir.
-- Taşınabilir sürüm kaldırıldı; programı kurulum dosyasıyla kurun.
+- Yeni: İstek ve öneri gönder (⋮ menüsü). Öneri, istek veya hata bildirimi doğrudan bize ulaşır; isterseniz ekran görüntüsü de eklenir. İnternet yoksa mesaj saklanır, bağlantı gelince gönderilir.
+- Kesim listesi, levha başlıkları, CNC parça tablosu ve seçeneklerde taşan/kesilen yazılar düzeltildi.
+- Kullanım sözleşmesi güncellendi (gönderilen mesajlarla ilgili madde eklendi); açılışta bir kez onay istenir.
 
 Destek: Telegram @Galileo8101
