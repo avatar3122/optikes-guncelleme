@@ -67,7 +67,7 @@
         <label class="opt"><span>Malzemeyi dikkate al</span><input type="checkbox" class="sw" id="optMaterial"></label>
         <label class="opt"><span>Kenar bantlama</span><input type="checkbox" class="sw" id="optBand"></label>
         <label class="opt"><span>Damar yönünü dikkate al</span><input type="checkbox" class="sw" id="optGrain"></label>
-        <label class="opt"><span>Yapay zeka fire azaltıcı</span>
+        <label class="opt"><span>Fire azaltma seviyesi</span>
           <select id="optAI"><option value="400">Hızlı</option><option value="1500">Normal</option><option value="5000">Derin</option><option value="15000">Maksimum</option></select></label>
       </div>
     </section>
@@ -76,6 +76,9 @@
   <!-- ORTA: ÇİZİM -->
   <section class="center">
     <div class="toolbar" id="toolbar">
+      <button data-tool="undo" title="Geri al (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M9 7L4 12l5 5M4 12h11a5 5 0 010 10h-3" fill="none" stroke="currentColor" stroke-width="2.2" transform="translate(0 -3)"/></svg></button>
+      <button data-tool="redo" title="Yinele (Ctrl+Y)"><svg viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 000 10h3" fill="none" stroke="currentColor" stroke-width="2.2" transform="translate(0 -3)"/></svg></button>
+      <span class="sep"></span>
       <button data-tool="lock" title="Tabloları kilitle"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="fit" title="Sığdır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5"/></svg></button>
       <button data-tool="zin" title="Yakınlaştır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6M10 7v6M7 10h6" stroke="currentColor" stroke-width="2"/></svg></button>
@@ -132,16 +135,19 @@
     <section class="panel" id="nsSecOptions">
       <div class="phead"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 000-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 00-1.7-1L15 3h-4l-.4 2.9a7.4 7.4 0 00-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 000 2l-2.1 1.6 2 3.5 2.5-1a7.4 7.4 0 001.7 1L11 21h4l.4-2.9a7.4 7.4 0 001.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg><span>Seçenekler</span><i class="chev"></i></div>
       <div class="pbody options" id="nsOptions">
-        <label class="opt"><span>Parçalar arası boşluk (freze çapı dahil, mm)</span><input type="number" id="nsGap" min="0" step="0.5"></label>
-        <label class="opt"><span>Levha kenar payı (mm)</span><input type="number" id="nsMargin" min="0" step="0.5"></label>
+        <label class="opt"><span>Parçalar arası boşluk (freze çapı dahil, <i id="nsGapU">mm</i>)</span><input type="number" id="nsGap" min="0" step="0.5"></label>
+        <label class="opt"><span>Levha kenar payı (<i id="nsMarginU">mm</i>)</span><input type="number" id="nsMargin" min="0" step="0.5"></label>
         <label class="opt"><span>Döndürme</span><select id="nsRot"><option value="0">Döndürme yok</option><option value="180">180°</option><option value="90">90° adımlarla</option><option value="45">45° adımlarla</option><option value="30">30° adımlarla</option><option value="15">15° adımlarla</option></select></label>
-        <label class="opt"><span>Arama seviyesi</span><select id="nsTime"><option value="3000">Hızlı (3 sn)</option><option value="10000">Normal (10 sn)</option><option value="30000">Derin (30 sn)</option><option value="90000">Maksimum (90 sn)</option></select></label>
+        <label class="opt"><span>Fire azaltma seviyesi</span><select id="nsTime"><option value="3000">Hızlı (3 sn)</option><option value="10000">Normal (10 sn)</option><option value="30000">Derin (30 sn)</option><option value="90000">Maksimum (90 sn)</option></select></label>
         <label class="opt"><span>DXF birimi</span><select id="nsUnits"><option value="auto">Otomatik</option><option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="inch">inç</option></select></label>
       </div>
     </section>
   </aside>
   <section class="center">
     <div class="toolbar" id="nsToolbar">
+      <button data-tool="undo" title="Geri al (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M9 7L4 12l5 5M4 12h11a5 5 0 010 10h-3" fill="none" stroke="currentColor" stroke-width="2.2" transform="translate(0 -3)"/></svg></button>
+      <button data-tool="redo" title="Yinele (Ctrl+Y)"><svg viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 000 10h3" fill="none" stroke="currentColor" stroke-width="2.2" transform="translate(0 -3)"/></svg></button>
+      <span class="sep"></span>
       <button data-tool="fit" title="Sığdır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5"/></svg></button>
       <button data-tool="zin" title="Yakınlaştır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6M10 7v6M7 10h6" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="zout" title="Uzaklaştır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6M7 10h6" stroke="currentColor" stroke-width="2"/></svg></button>

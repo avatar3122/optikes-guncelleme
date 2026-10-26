@@ -25,7 +25,9 @@ button{font-family:inherit;cursor:pointer}
 .tb-btn.kebab{background:transparent}
 .tb-btn.caret{padding:0 6px;margin-left:1px}
 .tb-btn.primary{padding:0 18px}
-.tb-btn.busy{opacity:.7;pointer-events:none}
+.tb-btn.busy{background:#8a5a12}
+.tb-btn.busy:hover{background:#a66d17}
+.tb-btn.stopping{opacity:.7;pointer-events:none}
 .split{position:relative;display:flex}
 .menu{display:none;position:absolute;top:36px;left:0;min-width:220px;background:#fff;color:#222;border:1px solid #ccc;border-radius:3px;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:50;padding:4px 0}
 .menu.right{left:auto;right:0}
@@ -81,7 +83,7 @@ body.mode-nest .panel-only,body:not(.mode-nest) .nest-only{display:none!importan
 .grid-wrap{overflow-x:auto;background:#fff;margin:0 6px 8px}
 .grid{width:100%;border-collapse:collapse;table-layout:fixed}
 .grid th{overflow:hidden;text-overflow:ellipsis}
-.grid th{background:var(--grid-h);text-align:left;font-weight:600;padding:7px 6px;border-right:1px solid var(--line);white-space:nowrap;font-size:13.5px}
+.grid th{background:var(--grid-h);text-align:left;font-weight:600;padding:7px 4px 7px 5px;border-right:1px solid var(--line);white-space:nowrap;font-size:13px}
 .grid th.menu-col{width:32px;text-align:center;cursor:pointer;position:relative}
 .grid th.act-col{width:56px}
 .grid td{border-right:1px solid var(--line);border-bottom:1px solid #f0f1f2;padding:0;height:30px}
@@ -251,3 +253,13 @@ body.mode-nest .panel-only,body:not(.mode-nest) .nest-only{display:none!importan
 .fb-shot{display:flex;align-items:center;gap:8px;margin:10px 0 4px;cursor:pointer}
 .fb-shot img{height:54px;border:1px solid #ccc;border-radius:3px;margin-left:auto}
 .fb-note{font-size:12px;color:#777;margin:8px 0 0}
+
+/* Satır seçimi / toplu düzenleme */
+.grid th.sel-col,.grid td.sel-col{width:24px;text-align:center;padding:0}
+.grid td.sel-col input,.grid th.sel-col input{margin:0;width:14px;height:14px;cursor:pointer}
+.selbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 6px 0;padding:6px 8px;background:#e7f0f8;border:1px solid #c4d7e8;border-radius:3px;font-size:12.5px}
+.selbar b{margin-right:4px;color:#2f5f86}
+.btn.sm{height:26px;padding:0 9px;font-size:12.5px}
+.opt span i{font-style:normal}
+.unitb{background:#5b8fb9;color:#fff;border-radius:8px;padding:0 7px;font-size:11px;font-weight:600}
+.unitb:empty{display:none}
