@@ -1,11 +1,11 @@
 {
   "name": "optikes",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "OptiKes kesim optimizasyon programı",
   "main": "app/main/main.js",
   "scripts": {},
   "keywords": [],
-  "author": "OptiKes",
+  "author": "Cengoist",
   "license": "UNLICENSED",
   "devDependencies": {
     "electron": "^45.0.0",
@@ -93,7 +93,8 @@
         "repo": "optikes-guncelleme",
         "releaseType": "release"
       }
-    ]
+    ],
+    "copyright": "© 2026 Cengoist"
   },
   "dependencies": {
     "electron-updater": "^6.8.11"

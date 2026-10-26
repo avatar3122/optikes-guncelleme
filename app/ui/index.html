@@ -55,7 +55,7 @@
       <div class="pbody"><div class="grid-wrap"><table class="grid" id="gridParts"></table></div></div>
     </section>
     <section class="panel" id="secStocks">
-      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 2l10 6-10 6L2 8zM2 12l10 6 10-6M2 16l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Malzeme Levhaları</span><i class="chev"></i></div>
+      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 2l10 6-10 6L2 8zM2 12l10 6 10-6M2 16l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Malzeme Levhaları</span><button class="ph-btn" id="btnSheetDxf" title="AutoCAD vb. ile çizilmiş, eksik ya da kullanılmış bölgesi olan levhayı DXF olarak yükleyin">Levha yükle (DXF)</button><i class="chev"></i></div>
       <div class="pbody"><div class="grid-wrap"><table class="grid" id="gridStocks"></table></div></div>
     </section>
     <section class="panel" id="secOptions">
@@ -67,6 +67,7 @@
         <label class="opt"><span>Malzemeyi dikkate al</span><input type="checkbox" class="sw" id="optMaterial"></label>
         <label class="opt"><span>Kenar bantlama</span><input type="checkbox" class="sw" id="optBand"></label>
         <label class="opt"><span>Damar yönünü dikkate al</span><input type="checkbox" class="sw" id="optGrain"></label>
+        <label class="opt"><span>Artık stoğunu kullan (önce artıklar)</span><input type="checkbox" class="sw" id="optOffcut"></label>
         <label class="opt"><span>Fire azaltma seviyesi</span>
           <select id="optAI"><option value="400">Hızlı</option><option value="1500">Normal</option><option value="5000">Derin</option><option value="15000">Maksimum</option></select></label>
       </div>
@@ -90,6 +91,7 @@
       <button data-tool="dims" title="Ölçüleri göster" class="on"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 8v4M10 8v3M14 8v4M18 8v3" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="nums" title="Kesim sırası numaraları"><svg viewBox="0 0 24 24"><path d="M4 6h2M4 12h2M4 18h2M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="waste" title="Artık alanları tarama ile göster"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 18L18 6M9 20l11-11M4 15L15 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <button data-tool="edit" title="Elle düzenle: parçaları sürükleyin (aynı ölçüdeki parçalarla yer değiştirme veya boş alana taşıma)"><svg viewBox="0 0 24 24"><path d="M12 2l3 3h-2v6h6V9l3 3-3 3v-2h-6v6h2l-3 3-3-3h2v-6H5v2l-3-3 3-3v2h6V5H9z"/></svg></button>
       <div class="progress" id="progress"><div></div></div>
     </div>
     <div class="canvas" id="canvas">
@@ -111,6 +113,10 @@
       <div class="phead"><span>Akıllı öneriler</span><i class="chev"></i></div>
       <div class="pbody"><ul class="advice" id="advice"><li class="muted">Hesaplamadan sonra öneriler burada görünür.</li></ul></div>
     </section>
+    <section class="panel blue" id="secOffcut">
+      <div class="phead"><span>Artık stoğu</span><i class="chev"></i></div>
+      <div class="pbody"><div class="offcut-box" id="offcutBox"></div></div>
+    </section>
     <section class="panel blue" id="secCuts">
       <div class="phead"><span>Kesimler</span><i class="chev"></i></div>
       <div class="pbody"><table class="cuts" id="cutsTable"></table></div>
@@ -129,7 +135,7 @@
       </div>
     </section>
     <section class="panel" id="nsSecStocks">
-      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 2l10 6-10 6L2 8zM2 12l10 6 10-6M2 16l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Malzeme Levhaları</span><i class="chev"></i></div>
+      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 2l10 6-10 6L2 8zM2 12l10 6 10-6M2 16l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Malzeme Levhaları</span><button class="ph-btn" id="nsSheetDxf" title="AutoCAD vb. ile çizilmiş, eksik ya da kullanılmış bölgesi olan levhayı DXF olarak yükleyin">Levha yükle (DXF)</button><i class="chev"></i></div>
       <div class="pbody"><div class="grid-wrap"><table class="grid" id="nsStocks"></table></div></div>
     </section>
     <section class="panel" id="nsSecOptions">
@@ -154,6 +160,7 @@
       <span class="sep"></span>
       <button data-tool="color" title="Renkli parçalar"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.5-.7 1.5-1.5 0-1-.8-1.3-.8-2.2 0-.9.7-1.5 1.6-1.5H17a4 4 0 004-4c0-4.4-4-8.8-9-8.8z"/><circle cx="7.5" cy="11" r="1.5" fill="#fff"/><circle cx="10" cy="7" r="1.5" fill="#fff"/><circle cx="15" cy="7.5" r="1.5" fill="#fff"/></svg></button>
       <button data-tool="nums" title="Parça numaraları"><svg viewBox="0 0 24 24"><path d="M4 6h2M4 12h2M4 18h2M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button data-tool="edit" title="Elle düzenle: parçaları sürükleyin; R veya sağ tık ile döndürün"><svg viewBox="0 0 24 24"><path d="M12 2l3 3h-2v6h6V9l3 3-3 3v-2h-6v6h2l-3 3-3-3h2v-6H5v2l-3-3 3-3v2h6V5H9z"/></svg></button>
       <div class="progress" id="nsProgress"><div></div></div>
     </div>
     <div class="canvas" id="nsCanvas"><div class="empty">DXF parçalarını yükleyin, levha ölçüsünü girin ve <b>Hesapla</b>'ya basın.</div></div>

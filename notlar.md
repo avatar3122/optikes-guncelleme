@@ -1,10 +1,10 @@
-OptiKes 1.3.0
+OptiKes 1.4.0
 
-- Daha az fire: yeni "levha azaltma" adımı son levhadaki parçaları diğer levhaların boşluklarına dağıtır, gerekirse levhaları birleştirir. Testlerde aynı işler 1-3 levha daha az levhayla çıktı.
-- "Yapay zeka fire azaltıcı" artık "Fire azaltma seviyesi".
-- Hesaplarken "Yeterli, sonucu al" düğmesi: aramayı durdurur, o ana kadarki en iyi planı gösterir.
-- Geri al / ileri al (Ctrl+Z / Ctrl+Y ve araç çubuğundaki düğmeler).
-- Satırları seçip toplu düzenleme: adet (ör. *2), malzeme, etiket, damar yönü, kenar bandı; toplu silme.
-- Ölçü birimi seçimi: mm, cm veya inç (Ayarlar).
+- Levha yükle (DXF): AutoCAD vb. ile çizdiğiniz, bir kısmı eksik ya da daha önce kullanılmış levhayı her iki sekmede de levha olarak tanımlayın. Parçalar eksik bölgelere yerleştirilmez; planda taralı görünür.
+- Artık stoğu: kesimden kalan, kısa kenarı 200 mm ve üzeri artıklar tek tıkla stoğa kaydedilir. "Artık stoğunu kullan" açıkken sonraki işlerde önce artıklar kullanılır, kullanılanlar stoktan düşülür.
+- Elle düzenleme: CNC Nesting'de parçaları sürükleyip döndürün (R / sağ tık); çakışan konum kabul edilmez. Panel Kesim'de aynı ölçüdeki parçalarla yer değiştirin veya boş alana taşıyın; kesim planı otomatik güncellenir.
+- Öneriler: "Karşılaştır" ile şimdiki plan ve öneri yan yana; "Uygula" ile tek tıkla geçin (ek hesaplama hakkı harcanmaz).
+- Cengoist markası, yeni iletişim: Telegram @Optikes · destek@cengoist.com · satis@cengoist.com.
+- Lisans sunucusu artık lisans.cengoist.com (yedek adrese otomatik geçiş).
 
-Destek: Telegram @Galileo8101
+Destek: Telegram @Optikes
