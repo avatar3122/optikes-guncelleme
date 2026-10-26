@@ -8,7 +8,10 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><img src="logo.svg" class="logo" alt=""><span class="name">Opti<b>Kes</b></span></div>
+  <div class="tb-left">
+    <div class="brand"><img src="logo.svg" class="logo" alt=""><span class="name">Opti<b>Kes</b></span></div>
+    <nav class="tabs" id="tabs"><button data-tab="panel" class="on" title="Dikdörtgen parçalar, boydan boya kesim">Panel Kesim</button><button data-tab="nest" title="DXF'ten şekilli parçalar, CNC yerleşim planı">CNC Nesting</button></nav>
+  </div>
   <div class="actions">
     <button id="btnCalc" class="tb-btn primary" title="Hesapla (Ctrl+Enter)"><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>Hesapla</button>
     <div class="split">
@@ -20,8 +23,9 @@
         <hr>
         <a data-act="pdf">PDF olarak dışa aktar</a>
         <a data-act="print">Yazdır</a>
-        <a data-act="csv">Kesim listesi (CSV)</a>
-        <a data-act="partsCsv">Parça listesi (CSV)</a>
+        <a data-act="dxf" class="nest-only">Yerleşim planı (DXF, CNC için)</a>
+        <a data-act="csv" class="panel-only">Kesim listesi (CSV)</a>
+        <a data-act="partsCsv" class="panel-only">Parça listesi (CSV)</a>
         <a data-act="png">Kesim planı görseli (PNG)</a>
       </div>
     </div>
@@ -42,7 +46,7 @@
   </div>
 </header>
 
-<main class="layout">
+<main class="layout" id="layoutPanel">
   <!-- SOL PANEL -->
   <aside class="left">
     <section class="panel" id="secParts">
@@ -110,6 +114,50 @@
   </aside>
 </main>
 
+<!-- CNC NESTING SEKMESİ -->
+<main class="layout" id="layoutNest">
+  <aside class="left">
+    <section class="panel" id="nsSecParts">
+      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 7 7 0 010-18z"/></svg><span>Şekilli Parçalar (DXF)</span><i class="chev"></i></div>
+      <div class="pbody">
+        <div class="ns-bar"><button class="btn pri" id="nsLoad">DXF yükle…</button><button class="btn" id="nsSample">Örnek: Hilal</button><span class="ns-hint">veya DXF dosyasını buraya sürükleyin</span></div>
+        <div class="grid-wrap"><table class="grid ns-grid" id="nsParts"></table></div>
+      </div>
+    </section>
+    <section class="panel" id="nsSecStocks">
+      <div class="phead"><svg viewBox="0 0 24 24"><path d="M12 2l10 6-10 6L2 8zM2 12l10 6 10-6M2 16l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Malzeme Levhaları</span><i class="chev"></i></div>
+      <div class="pbody"><div class="grid-wrap"><table class="grid" id="nsStocks"></table></div></div>
+    </section>
+    <section class="panel" id="nsSecOptions">
+      <div class="phead"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 000-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 00-1.7-1L15 3h-4l-.4 2.9a7.4 7.4 0 00-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 000 2l-2.1 1.6 2 3.5 2.5-1a7.4 7.4 0 001.7 1L11 21h4l.4-2.9a7.4 7.4 0 001.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg><span>Seçenekler</span><i class="chev"></i></div>
+      <div class="pbody options" id="nsOptions">
+        <label class="opt"><span>Parçalar arası boşluk (freze çapı dahil, mm)</span><input type="number" id="nsGap" min="0" step="0.5"></label>
+        <label class="opt"><span>Levha kenar payı (mm)</span><input type="number" id="nsMargin" min="0" step="0.5"></label>
+        <label class="opt"><span>Döndürme</span><select id="nsRot"><option value="0">Döndürme yok</option><option value="180">180°</option><option value="90">90° adımlarla</option><option value="45">45° adımlarla</option><option value="30">30° adımlarla</option><option value="15">15° adımlarla</option></select></label>
+        <label class="opt"><span>Arama seviyesi</span><select id="nsTime"><option value="3000">Hızlı (3 sn)</option><option value="10000">Normal (10 sn)</option><option value="30000">Derin (30 sn)</option><option value="90000">Maksimum (90 sn)</option></select></label>
+        <label class="opt"><span>DXF birimi</span><select id="nsUnits"><option value="auto">Otomatik</option><option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="inch">inç</option></select></label>
+      </div>
+    </section>
+  </aside>
+  <section class="center">
+    <div class="toolbar" id="nsToolbar">
+      <button data-tool="fit" title="Sığdır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <button data-tool="zin" title="Yakınlaştır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6M10 7v6M7 10h6" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button data-tool="zout" title="Uzaklaştır"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6M7 10h6" stroke="currentColor" stroke-width="2"/></svg></button>
+      <span class="sep"></span>
+      <button data-tool="color" title="Renkli parçalar"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.5-.7 1.5-1.5 0-1-.8-1.3-.8-2.2 0-.9.7-1.5 1.6-1.5H17a4 4 0 004-4c0-4.4-4-8.8-9-8.8z"/><circle cx="7.5" cy="11" r="1.5" fill="#fff"/><circle cx="10" cy="7" r="1.5" fill="#fff"/><circle cx="15" cy="7.5" r="1.5" fill="#fff"/></svg></button>
+      <button data-tool="nums" title="Parça numaraları"><svg viewBox="0 0 24 24"><path d="M4 6h2M4 12h2M4 18h2M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2"/></svg></button>
+      <div class="progress" id="nsProgress"><div></div></div>
+    </div>
+    <div class="canvas" id="nsCanvas"><div class="empty">DXF parçalarını yükleyin, levha ölçüsünü girin ve <b>Hesapla</b>'ya basın.</div></div>
+  </section>
+  <aside class="right">
+    <section class="panel blue" id="nsSecGeneral"><div class="phead"><span>Genel istatistikler</span><i class="chev"></i></div><div class="pbody"><table class="kv" id="nsGeneral"></table></div></section>
+    <section class="panel blue" id="nsSecSheet"><div class="phead"><span>Levha istatistikleri</span><span class="pager"><button id="nsPrev">‹</button><b id="nsSheetIdx">0 / 0</b><button id="nsNext">›</button></span><i class="chev"></i></div><div class="pbody"><table class="kv" id="nsSheet"></table></div></section>
+    <section class="panel blue" id="nsSecList"><div class="phead"><span>Parçalar</span><i class="chev"></i></div><div class="pbody"><table class="cuts" id="nsList"></table></div></section>
+  </aside>
+</main>
+
 <div class="tooltip" id="tip"></div>
 <div class="modal" id="modal"><div class="dlg"><div class="dlg-h"><span id="dlgTitle"></span><button id="dlgClose">×</button></div><div class="dlg-b" id="dlgBody"></div><div class="dlg-f" id="dlgFoot"></div></div></div>
 <div class="toast" id="toast"></div>
@@ -144,5 +192,7 @@
 
 <script src="eula.js"></script>
 <script src="app.js"></script>
+<script src="../engine/dxf.js"></script>
+<script src="nest-ui.js"></script>
 </body>
 </html>

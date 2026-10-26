@@ -34,6 +34,26 @@ button{font-family:inherit;cursor:pointer}
 .menu a:hover{background:#eef2f5}
 .menu hr{border:0;border-top:1px solid #e5e5e5;margin:4px 0}
 
+/* Sekmeler */
+.tb-left{display:flex;align-items:center;height:100%}
+.tabs{display:flex;height:100%;margin-left:30px}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;color:#c5ccd2;font-size:14px;padding:0 18px;height:100%}
+.tabs button:hover{color:#fff;background:rgba(255,255,255,.05)}
+.tabs button.on{color:#fff;border-bottom-color:#7cc0ff;background:rgba(255,255,255,.08)}
+#layoutNest{display:none}
+body.mode-nest #layoutPanel{display:none}
+body.mode-nest #layoutNest{display:flex}
+body.mode-nest .panel-only,body:not(.mode-nest) .nest-only{display:none!important}
+.ns-bar{display:flex;align-items:center;gap:8px;padding:8px 8px 6px;flex-wrap:wrap}
+.ns-hint{color:#888;font-size:12px}
+.ns-grid td.pv{text-align:center;padding:2px}
+.ns-grid td.pv svg{width:40px;height:26px;display:block;margin:auto}
+.ns-grid td.sz{font-size:12px;color:#555;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ns-grid td.ck{text-align:center}
+.left.drop{outline:3px dashed #5b8fb9;outline-offset:-6px}
+.sheet-svg .npart{cursor:pointer}
+.sheet-svg .npart:hover path{stroke:#2f6b9a}
+
 /* Yerleşim */
 .layout{display:flex;height:calc(100% - 46px)}
 .left{width:25%;min-width:330px;max-width:520px;background:var(--lbg);border-right:4px solid #e6e8ea;overflow-y:auto;overflow-x:hidden}

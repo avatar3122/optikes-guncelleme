@@ -1,8 +1,8 @@
 {
   "name": "optikes",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "OptiKes kesim optimizasyon programı",
-  "main": "src/main/main.js",
+  "main": "app/main/main.js",
   "scripts": {},
   "keywords": [],
   "author": "OptiKes",
@@ -48,18 +48,9 @@
           "arch": [
             "x64"
           ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
         }
       ],
       "artifactName": "OptiKes-${version}-${arch}-${target}.${ext}"
-    },
-    "portable": {
-      "artifactName": "OptiKes-${version}-Tasinabilir.${ext}"
     },
     "nsis": {
       "oneClick": false,

@@ -25,7 +25,7 @@ jobs:
       - name: Paketle
         run: |
           set -o pipefail
-          npx electron-builder --win nsis portable --x64 --publish never 2>&1 | tee -a kayit.txt
+          npx electron-builder --win nsis --x64 --publish never 2>&1 | tee -a kayit.txt
           ls -la dist | tee -a kayit.txt
           cat dist/latest.yml | tee -a kayit.txt
       - name: Yayınla
@@ -34,7 +34,7 @@ jobs:
           V=$(node -p "require('./package.json').version")
           gh release delete "v$V" -y --cleanup-tag 2>&1 | tee -a kayit.txt || true
           sleep 5
-          gh release create "v$V" dist/OptiKes-Kurulum-$V.exe dist/OptiKes-Kurulum-$V.exe.blockmap dist/latest.yml dist/OptiKes-$V-Tasinabilir.exe \
+          gh release create "v$V" dist/OptiKes-Kurulum-$V.exe dist/OptiKes-Kurulum-$V.exe.blockmap dist/latest.yml \
             --title "OptiKes $V" --notes-file notlar.md --latest 2>&1 | tee -a kayit.txt
       - name: Kaydı sakla
         if: always()
