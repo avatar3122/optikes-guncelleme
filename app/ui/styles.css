@@ -295,3 +295,10 @@ table.cmp td.worse{color:#b3261e}
 .cmp-view>div{border:1px solid #e3e7eb;border-radius:8px;padding:8px;max-height:380px;overflow:auto}
 .cmp-view svg{width:100%;height:auto;max-height:260px;display:block;margin:6px auto 0}
 .dlg.wide{width:min(980px,94vw)}
+.toolbar button .tl{font-size:11.5px;font-weight:600;margin-left:4px}
+.toolbar button[data-tool="auto"]{width:auto;padding:0 8px}
+.drop-ghost{fill:rgba(31,157,85,.25);stroke:#1f9d55;stroke-width:3px;vector-effect:non-scaling-stroke;pointer-events:none}
+.drop-ghost.bad{fill:rgba(198,40,40,.18);stroke:#c62828}
+.part.turned text{display:none}
+.edited-tag{font-size:11px;font-weight:700;color:#8a5a00;background:#fff1d6;border:1px solid #f1d08b;border-radius:4px;padding:1px 6px}
+.ang-tip{position:fixed;pointer-events:none;background:#1f6fb2;color:#fff;font:600 12px/1 inherit;padding:4px 7px;border-radius:4px;z-index:101;display:none}

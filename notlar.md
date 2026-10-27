@@ -1,10 +1,11 @@
-OptiKes 1.4.0
+OptiKes 1.4.1
 
-- Levha yükle (DXF): AutoCAD vb. ile çizdiğiniz, bir kısmı eksik ya da daha önce kullanılmış levhayı her iki sekmede de levha olarak tanımlayın. Parçalar eksik bölgelere yerleştirilmez; planda taralı görünür.
-- Artık stoğu: kesimden kalan, kısa kenarı 200 mm ve üzeri artıklar tek tıkla stoğa kaydedilir. "Artık stoğunu kullan" açıkken sonraki işlerde önce artıklar kullanılır, kullanılanlar stoktan düşülür.
-- Elle düzenleme: CNC Nesting'de parçaları sürükleyip döndürün (R / sağ tık); çakışan konum kabul edilmez. Panel Kesim'de aynı ölçüdeki parçalarla yer değiştirin veya boş alana taşıyın; kesim planı otomatik güncellenir.
-- Öneriler: "Karşılaştır" ile şimdiki plan ve öneri yan yana; "Uygula" ile tek tıkla geçin (ek hesaplama hakkı harcanmaz).
-- Cengoist markası, yeni iletişim: Telegram @Optikes · destek@cengoist.com · satis@cengoist.com.
-- Lisans sunucusu artık lisans.cengoist.com (yedek adrese otomatik geçiş).
+- Elle düzenlemede yeni "Otomatik yer algılama" düğmesi:
+  - Açıkken: Panel Kesim'de parça bırakıldığı boşluğun en yakın köşesine oturur; CNC Nesting'de çakışan yere bırakılan parça en yakın uygun yere yerleşir.
+  - Kapalıyken: parça tam bıraktığınız yerde kalır; Panel Kesim'de gereken düz kesimler kendiliğinden eklenir.
+- Panel Kesim'de yan yana boş alanlar tek alan gibi kullanılır; tutarken R tuşu parçayı 90° döndürür (damar yönü işaretli parçalar dönmez).
+- CNC Nesting'de serbest açı: tutarken fare tekerleği 5° (Shift 15°, Ctrl 1°), R tuşu 90° döndürür; parçaya çift tıklayıp açıyı yazabilirsiniz.
+- Parçalar levhalar arasında sürüklenebilir; boşalan levha plandan çıkar, levha sayısı düşer.
+- Elle yapılan değişiklikler Ctrl+Z ile geri alınır. Düzenlenen levhada "elle düzenlendi" etiketi görünür.
 
 Destek: Telegram @Optikes

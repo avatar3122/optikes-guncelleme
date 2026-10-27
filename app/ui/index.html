@@ -92,6 +92,7 @@
       <button data-tool="nums" title="Kesim sırası numaraları"><svg viewBox="0 0 24 24"><path d="M4 6h2M4 12h2M4 18h2M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="waste" title="Artık alanları tarama ile göster"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 18L18 6M9 20l11-11M4 15L15 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
       <button data-tool="edit" title="Elle düzenle: parçaları sürükleyin (aynı ölçüdeki parçalarla yer değiştirme veya boş alana taşıma)"><svg viewBox="0 0 24 24"><path d="M12 2l3 3h-2v6h6V9l3 3-3 3v-2h-6v6h2l-3 3-3-3h2v-6H5v2l-3-3 3-3v2h6V5H9z"/></svg></button>
+      <button data-tool="auto" hidden title="Otomatik yer algılama: açıkken parça boşluğa kendiliğinden oturur, kapalıyken bıraktığınız yerde kalır"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.8"/></svg><span class="tl">Oto. yer</span></button>
       <div class="progress" id="progress"><div></div></div>
     </div>
     <div class="canvas" id="canvas">
@@ -161,6 +162,7 @@
       <button data-tool="color" title="Renkli parçalar"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.5-.7 1.5-1.5 0-1-.8-1.3-.8-2.2 0-.9.7-1.5 1.6-1.5H17a4 4 0 004-4c0-4.4-4-8.8-9-8.8z"/><circle cx="7.5" cy="11" r="1.5" fill="#fff"/><circle cx="10" cy="7" r="1.5" fill="#fff"/><circle cx="15" cy="7.5" r="1.5" fill="#fff"/></svg></button>
       <button data-tool="nums" title="Parça numaraları"><svg viewBox="0 0 24 24"><path d="M4 6h2M4 12h2M4 18h2M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2"/></svg></button>
       <button data-tool="edit" title="Elle düzenle: parçaları sürükleyin; R veya sağ tık ile döndürün"><svg viewBox="0 0 24 24"><path d="M12 2l3 3h-2v6h6V9l3 3-3 3v-2h-6v6h2l-3 3-3-3h2v-6H5v2l-3-3 3-3v2h6V5H9z"/></svg></button>
+      <button data-tool="auto" hidden title="Otomatik yer algılama: açıkken parça boşluğa kendiliğinden oturur, kapalıyken bıraktığınız yerde kalır"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.8"/></svg><span class="tl">Oto. yer</span></button>
       <div class="progress" id="nsProgress"><div></div></div>
     </div>
     <div class="canvas" id="nsCanvas"><div class="empty">DXF parçalarını yükleyin, levha ölçüsünü girin ve <b>Hesapla</b>'ya basın.</div></div>
