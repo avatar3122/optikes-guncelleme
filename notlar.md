@@ -1,6 +1,5 @@
-OptiKes 1.5.2
+OptiKes 1.5.3
 
-- Güncelleme hazır olduğunda üst çubukta turuncu "Güncelle" düğmesi görünür; tek tıkla kurulur.
-- Menüye "Güncellemeleri denetle" seçeneği eklendi.
+- Lisans ve diğer pencerelerde düğme yazılarının kutudan taşması düzeltildi.
 
 Destek: Telegram @Optikes

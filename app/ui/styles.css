@@ -174,7 +174,8 @@ body.mode-nest .panel-only,body:not(.mode-nest) .nest-only{display:none!importan
 .dlg-b input[type=text],.dlg-b input[type=number],.dlg-b select,.dlg-b textarea{border:1px solid #ccc;border-radius:2px;padding:5px 7px;font:inherit}
 .dlg-b textarea{width:100%;min-height:70px;font-family:Consolas,monospace;font-size:12px}
 .dlg-b code{background:#f1f3f5;padding:2px 5px;border-radius:2px;font-size:12px;user-select:all;word-break:break-all}
-.dlg-f{padding:10px 14px;display:flex;justify-content:flex-end;gap:8px;border-top:1px solid #eee}
+.dlg-f{padding:10px 14px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;border-top:1px solid #eee}
+.dlg-f button{white-space:nowrap}
 .btn{height:30px;padding:0 14px;border:1px solid #bbb;border-radius:3px;background:#f6f6f6}
 .btn.pri{background:#3b6f99;border-color:#3b6f99;color:#fff}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#2c3238;color:#fff;padding:9px 16px;border-radius:4px;display:none;z-index:300;font-size:13px}
