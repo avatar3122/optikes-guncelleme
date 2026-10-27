@@ -1,7 +1,7 @@
-OptiKes 1.4.2
+OptiKes 1.4.3
 
-- Panel Kesim elle düzenleme: parçayı tutarken R tuşu, sağ tık veya fare tekerleği 90° döndürür. Tutmadan sağ tıklarsanız parça yerinde döner (yer yetiyorsa).
-- "Sığmıyor" uyarısı artık parça ve boşluk ölçülerini, döndürünce sığıp sığmayacağını söylüyor.
-- İlk sürüklemede döndürme ipucu; uzun uyarılar ekrandan taşmıyor.
+- Panel Kesim elle düzenleme: parçayı boş görünen her yere bırakabilirsiniz. Program kesim planını parçaların yeni yerlerine göre baştan kurar (boydan boya kesim korunur).
+- Parça, komşu parçaya veya levha kenarına 10 mm'den yakın bırakılırsa testere payı kadar boşlukla yanına yapışır.
+- Konum kabul edilmezse uyarı nedenini söyler (çakışma, levha dışı, düz kesimle ayrılamama) ve döndürünce olacaksa belirtir.
 
 Destek: Telegram @Optikes
