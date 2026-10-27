@@ -1,5 +1,6 @@
-OptiKes 1.5.3
+OptiKes 1.6.0
 
-- Lisans ve diğer pencerelerde düğme yazılarının kutudan taşması düzeltildi.
+- CNC Nesting: DXF çizimlerindeki iç çizgiler (kanal) artık alınıyor. Parçayla birlikte döner, yerleşim planında yeşil kesik çizgiyle görünür, CNC için DXF çıktısında ayrı "KANAL" katmanına yazılır.
+- Panel Kesim: Parçalar başlığına "DXF'ten ekle" düğmesi eklendi. Birden fazla DXF seçilebilir; ölçüler çizimden okunur.
 
 Destek: Telegram @Optikes
