@@ -326,3 +326,16 @@ body.has-exp .layout{height:calc(100% - 46px - 36px)}
 .tour-btns button{font:inherit;font-size:13px;padding:6px 12px;border-radius:6px;border:1px solid #b9c7d3;background:#fff;cursor:pointer}
 .tour-btns button.pri{background:#2f6b9a;border-color:#2f6b9a;color:#fff}
 .tour-btns button.lnk{border:0;background:none;color:#667;margin-right:auto;padding-left:0}
+.tb-mid{flex:1;display:flex;justify-content:center;align-items:center;min-width:0}
+.upd-btn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 14px;border-radius:16px;border:0;font:600 13.5px/1 inherit;font-family:inherit;cursor:pointer;white-space:nowrap}
+.upd-btn[hidden]{display:none}
+.upd-btn svg{width:16px;height:16px}
+.upd-btn.dl{background:rgba(255,255,255,.1);color:#c9d2da;cursor:default}
+.upd-btn.ready{background:#ff9f1a;color:#1d1300;box-shadow:0 0 0 0 rgba(255,159,26,.7);animation:updPulse 1.8s ease-out infinite}
+.upd-btn.ready:hover{background:#ffb446}
+@keyframes updPulse{0%{box-shadow:0 0 0 0 rgba(255,159,26,.65)}70%{box-shadow:0 0 0 10px rgba(255,159,26,0)}100%{box-shadow:0 0 0 0 rgba(255,159,26,0)}}
+.topbar .tb-left,.topbar .actions{flex-shrink:0}
+.tb-mid{flex:1 1 auto;overflow:hidden;padding:0 8px}
+.tabs button{white-space:nowrap}
+@media (max-width:1250px){.upd-btn{padding:0 10px}.upd-btn.dl span{display:none}}
+@media (max-width:1150px){.upd-btn span{display:none}.upd-btn{padding:0;width:34px;justify-content:center}.tb-mid{padding:0 4px;flex:0 0 auto}}

@@ -1,5 +1,6 @@
-OptiKes 1.5.1
+OptiKes 1.5.2
 
-- Panel Kesim elle düzenleme: yeterli boşluk olduğu halde "boydan boya kesimle ayrılamıyor" denen konumlar düzeltildi. Kesim hattı artık bir sonraki parçanın hemen önüne konuyor; testere payından ince şerit kalmıyor.
+- Güncelleme hazır olduğunda üst çubukta turuncu "Güncelle" düğmesi görünür; tek tıkla kurulur.
+- Menüye "Güncellemeleri denetle" seçeneği eklendi.
 
 Destek: Telegram @Optikes
