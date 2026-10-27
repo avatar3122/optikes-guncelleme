@@ -1,6 +1,6 @@
 {
   "name": "optikes",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "OptiKes kesim optimizasyon programı",
   "main": "app/main/main.js",
   "scripts": {},
