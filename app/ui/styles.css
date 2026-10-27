@@ -163,7 +163,7 @@ body.mode-nest .panel-only,body:not(.mode-nest) .nest-only{display:none!importan
 .advice .muted,.advice li.info{color:#777}
 
 /* Tooltip, modal, toast */
-.tooltip{position:fixed;pointer-events:none;background:rgba(30,34,38,.92);color:#fff;padding:6px 9px;border-radius:3px;font-size:12px;display:none;z-index:100;white-space:nowrap}
+.tooltip{position:fixed;pointer-events:none;background:rgba(30,34,38,.92);color:#fff;padding:6px 9px;border-radius:3px;font-size:12px;display:none;z-index:100;white-space:normal;max-width:340px;line-height:1.4}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:200;align-items:center;justify-content:center}
 .modal.open{display:flex}
 .dlg{background:#fff;width:min(560px,92vw);border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.3);overflow:hidden}
