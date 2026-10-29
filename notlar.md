@@ -1,6 +1,6 @@
-OptiKes 1.6.0
+OptiKes 1.7.0
 
-- CNC Nesting: DXF çizimlerindeki iç çizgiler (kanal) artık alınıyor. Parçayla birlikte döner, yerleşim planında yeşil kesik çizgiyle görünür, CNC için DXF çıktısında ayrı "KANAL" katmanına yazılır.
-- Panel Kesim: Parçalar başlığına "DXF'ten ekle" düğmesi eklendi. Birden fazla DXF seçilebilir; ölçüler çizimden okunur.
+- Panel Kesim: Hesaplama motoru boş alanları çok daha iyi değerlendiriyor. Bir parça önceki levhadaki boşluğa sığıyorsa artık yeni levhaya gönderilmiyor; aynı işte daha az levha ve daha yüksek verim elde edilebiliyor.
+- CNC Nesting: Döndürme ayarı sadeleşti. Parça listesindeki "Yön" sütunundan her parça için "Serbest" (en iyi sığacak şekilde döner) ya da "Sabit" (kanallı/damarlı parçalarda yön korunur) seçilir. Dönüş adımı Seçenekler > Gelişmiş bölümünde. Eski projeler otomatik olarak yeni düzene çevrilir.
 
 Destek: Telegram @Optikes

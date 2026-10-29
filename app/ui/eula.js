@@ -8,7 +8,7 @@ window.EULA_HTML = `
 <h4>1. Lisans</h4>
 <p>Lisans Veren, Kullanıcıya Yazılımı satın alınan paketin süresi ve cihaz sayısı ile sınırlı, devredilemez ve münhasır olmayan bir kullanım hakkı verir. Yazılımın mülkiyeti ve tüm fikri hakları Lisans Verene aittir.</p>
 <h4>2. Süre, cihaz sayısı ve deneme</h4>
-<p>Lisans süresi, lisans anahtarının ilk etkinleştirildiği anda başlar. Paketler: 1 ay (2 cihaz), 3 ay (5 cihaz), 6 ay (10 cihaz), 12 ay (20 cihaz). Süre dolduğunda Yazılım kilitlenir ve yeni bir lisans anahtarı girilene kadar kullanılamaz. Ücretsiz deneme her cihaz için 3 hesaplama ile sınırlıdır.</p>
+<p>Lisans süresi, lisans anahtarının ilk etkinleştirildiği anda başlar. Her paketin süresi ve cihaz sayısı, satın alma anında fiyat listesinde belirtildiği gibidir. Süre dolduğunda Yazılım kilitlenir ve yeni bir lisans anahtarı girilene kadar kullanılamaz. Ücretsiz deneme her cihaz için 3 hesaplama ile sınırlıdır.</p>
 <h4>3. Yasaklar</h4>
 <p>Kullanıcı; Yazılımı kopyalayamaz, kiralayamaz, satamaz, lisans anahtarını paket kapsamı dışında paylaşamaz; Yazılımı tersine mühendislikle çözemez, değiştiremez, lisans ve güvenlik denetimlerini atlatmaya çalışamaz. Bu kurallara aykırılık halinde lisans uyarı yapılmaksızın iptal edilebilir.</p>
 <h4>4. İnternet bağlantısı ve toplanan veriler</h4>

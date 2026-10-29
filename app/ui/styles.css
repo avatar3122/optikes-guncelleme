@@ -340,3 +340,8 @@ body.has-exp .layout{height:calc(100% - 46px - 36px)}
 .tabs button{white-space:nowrap}
 @media (max-width:1250px){.upd-btn{padding:0 10px}.upd-btn.dl span{display:none}}
 @media (max-width:1150px){.upd-btn span{display:none}.upd-btn{padding:0;width:34px;justify-content:center}.tb-mid{padding:0 4px;flex:0 0 auto}}
+/* CNC Nesting: parça bazlı yön seçimi ve gelişmiş seçenekler */
+.ns-grid td.yon{text-align:center;padding:0 3px}
+.ns-grid td.yon select{width:100%;height:24px;border:1px solid #ccc;border-radius:2px;font:inherit;font-size:12.5px;background:#fff;padding:0 2px}
+.options details.adv{margin-top:6px;border-top:1px solid #e3e3e3;padding-top:6px}
+.options details.adv summary{cursor:pointer;font-size:13px;color:#666;padding:4px 0;user-select:none}

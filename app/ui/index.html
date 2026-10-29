@@ -149,10 +149,12 @@
       <div class="pbody options" id="nsOptions">
         <label class="opt"><span>Parçalar arası boşluk (freze çapı dahil, <i id="nsGapU">mm</i>)</span><input type="number" id="nsGap" min="0" step="0.5"></label>
         <label class="opt"><span>Levha kenar payı (<i id="nsMarginU">mm</i>)</span><input type="number" id="nsMargin" min="0" step="0.5"></label>
-        <label class="opt"><span>Döndürme</span><select id="nsRot"><option value="0">Döndürme yok</option><option value="180">180°</option><option value="90">90° adımlarla</option><option value="45">45° adımlarla</option><option value="30">30° adımlarla</option><option value="15">15° adımlarla</option></select></label>
         <label class="opt"><span>Fire azaltma seviyesi</span><select id="nsTime"><option value="3000">Hızlı (3 sn)</option><option value="10000">Normal (10 sn)</option><option value="30000">Derin (30 sn)</option><option value="90000">Maksimum (90 sn)</option></select></label>
         <label class="opt" title="Büyük parçaların deliklerine küçük parçalar yerleştirilir. DXF çıktısında içteki parçalar önce kesilecek sırayla yazılır."><span>Delik içine yerleştir</span><input type="checkbox" class="sw" id="nsHoles"></label>
         <label class="opt"><span>DXF birimi</span><select id="nsUnits"><option value="auto">Otomatik</option><option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="inch">inç</option></select></label>
+        <details class="adv" id="nsAdv"><summary>Gelişmiş</summary>
+          <label class="opt" title="Yönü 'Serbest' olan parçalar bu adımlarla döndürülerek denenir. Küçük adımlar daha sıkı yerleşim verebilir ama hesaplama uzar."><span>Serbest dönüş adımı</span><select id="nsRot"><option value="90">90° (önerilen)</option><option value="45">45°</option><option value="30">30°</option><option value="15">15°</option></select></label>
+        </details>
       </div>
     </section>
   </aside>
