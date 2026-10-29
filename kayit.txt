@@ -1,0 +1,55 @@
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+
+added 403 packages, and audited 404 packages in 6s
+
+80 packages are looking for funding
+  run `npm fund` for details
+
+5 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+  • electron-builder  version=26.18.0 os=10.0.26100
+  • loaded configuration  file=package.json ("build" field)
+  • executing @electron/rebuild  electronVersion=45.0.0 arch=x64 buildFromSource=false workspaceRoot=D:\a\optikes-guncelleme\optikes-guncelleme projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=45.0.0 appOutDir=dist\win-unpacked
+  • downloaded      label=electron progress=100%
+  • downloaded electron zip extracted successfully  output=D:\a\optikes-guncelleme\optikes-guncelleme\dist\win-unpacked
+  • searching for node modules  pm=npm searchDir=D:\a\optikes-guncelleme\optikes-guncelleme
+  • updating asar integrity executable resource  executablePath=dist\win-unpacked\OptiKes.exe
+  • executing @electron/fuses  electronPath=dist\win-unpacked\OptiKes.exe
+  • no code signing certificate configured, signing is skipped  path=dist\win-unpacked\OptiKes.exe
+  • building        target=nsis file=dist\OptiKes-Kurulum-1.8.1.exe archs=x64 oneClick=false perMachine=false
+  • downloaded      label=7zip-win-x64.tar.gz progress=100%
+  • downloaded      label=nsis-3.0.4.1.7z progress=100%
+  • no code signing certificate configured, signing is skipped  path=C:\Users\RUNNER~1\AppData\Local\Temp\t-RyUwtI\elevate-staging-1\resources\elevate.exe
+  • downloaded      label=nsis-resources-3.4.1.7z progress=100%
+  • no code signing certificate configured, signing is skipped  path=dist\OptiKes-Kurulum-1.8.1.__uninstaller.exe
+  • no code signing certificate configured, signing is skipped  path=dist\OptiKes-Kurulum-1.8.1.exe
+  • building block map  blockMapFile=dist\OptiKes-Kurulum-1.8.1.exe.blockmap
+total 119201
+drwxr-xr-x 1 runneradmin 197121         0 Oct 29 22:27 .
+drwxr-xr-x 1 runneradmin 197121         0 Oct 29 22:26 ..
+-rwxr-xr-x 1 runneradmin 197121 121911270 Oct 29 22:27 OptiKes-Kurulum-1.8.1.exe
+-rw-r--r-- 1 runneradmin 197121    129059 Oct 29 22:27 OptiKes-Kurulum-1.8.1.exe.blockmap
+-rw-r--r-- 1 runneradmin 197121      6982 Oct 29 22:27 builder-debug.yml
+-rw-r--r-- 1 runneradmin 197121       347 Oct 29 22:27 latest.yml
+drwxr-xr-x 1 runneradmin 197121         0 Oct 29 22:26 win-unpacked
+version: 1.8.1
+files:
+  - url: OptiKes-Kurulum-1.8.1.exe
+    sha512: 1mVVAuds/v9aBMG9AVzygnkb7k00AC2OAdxsjsJVA7rzF9LRYhtWtF0nz5pSounsCneUMDS/b4AqWWDgapBGnw==
+    size: 121911270
+path: OptiKes-Kurulum-1.8.1.exe
+sha512: 1mVVAuds/v9aBMG9AVzygnkb7k00AC2OAdxsjsJVA7rzF9LRYhtWtF0nz5pSounsCneUMDS/b4AqWWDgapBGnw==
+releaseDate: '2026-10-29T22:27:10.482Z'
+release not found
+https://github.com/avatar3122/optikes-guncelleme/releases/tag/v1.8.1
