@@ -10,7 +10,8 @@
   const LANG = saved === 'en' || saved === 'tr' ? saved : sys;
   window.LANG = LANG;
   window.okLoc = () => LANG === 'en' ? 'en-US' : 'tr-TR';
-  window.setLang = l => { try { localStorage.setItem(KEY, l); } catch (e) { } location.reload(); };
+  // Ana süreç sayfa içinden gezinmeyi engellediği için yeniden yükleme ana süreçten yapılır
+  window.setLang = l => { try { localStorage.setItem(KEY, l); } catch (e) { } if (window.api && window.api.reload) window.api.reload(); else location.reload(); };
 
   const EN = {
     // ---- Üst çubuk ve menüler ----

@@ -1,9 +1,7 @@
-OptiKes 1.8.0
+OptiKes 1.8.1
 
-- Yeni: İngilizce dil seçeneği. Ayarlar > "Dil / Language" bölümünden Türkçe ya da English seçilebilir. Bilgisayarı Türkçe olmayan kullanıcılarda program ilk açılışta İngilizce başlar.
-- Kullanım sözleşmesinin İngilizce çevirisi eklendi (Türkçe metin esastır).
-- Sayı ve tarih biçimi seçilen dile göre gösterilir.
+- Düzeltme: Ayarlar > "Dil / Language" bölümünden dil değiştirildiğinde program artık hemen seçilen dile geçiyor (önceki sürümde program yeniden açılana kadar Türkçe kalıyordu).
 
-New in 1.8.0: English language option (Settings > "Dil / Language").
+Fix in 1.8.1: changing the language in Settings now takes effect immediately.
 
 Destek: Telegram @Optikes
