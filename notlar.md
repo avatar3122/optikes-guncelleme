@@ -1,6 +1,9 @@
-OptiKes 1.7.0
+OptiKes 1.8.0
 
-- Panel Kesim: Hesaplama motoru boş alanları çok daha iyi değerlendiriyor. Bir parça önceki levhadaki boşluğa sığıyorsa artık yeni levhaya gönderilmiyor; aynı işte daha az levha ve daha yüksek verim elde edilebiliyor.
-- CNC Nesting: Döndürme ayarı sadeleşti. Parça listesindeki "Yön" sütunundan her parça için "Serbest" (en iyi sığacak şekilde döner) ya da "Sabit" (kanallı/damarlı parçalarda yön korunur) seçilir. Dönüş adımı Seçenekler > Gelişmiş bölümünde. Eski projeler otomatik olarak yeni düzene çevrilir.
+- Yeni: İngilizce dil seçeneği. Ayarlar > "Dil / Language" bölümünden Türkçe ya da English seçilebilir. Bilgisayarı Türkçe olmayan kullanıcılarda program ilk açılışta İngilizce başlar.
+- Kullanım sözleşmesinin İngilizce çevirisi eklendi (Türkçe metin esastır).
+- Sayı ve tarih biçimi seçilen dile göre gösterilir.
+
+New in 1.8.0: English language option (Settings > "Dil / Language").
 
 Destek: Telegram @Optikes
